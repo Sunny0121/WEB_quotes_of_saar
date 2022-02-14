@@ -21,43 +21,43 @@ function complete() {
 }
 
 // // Pick one quote
-// function newQuote() {
-//     loading();
-//     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
+function newQuote() {
+    loading();
+    const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
 
-//     if (!quote.author) {
-//         authorText.textContent = 'Unknown';
+    if (!quote.author) {
+        authorText.textContent = 'Unknown';
 
-//     } else {
+    } else {
 
-//         authorText.textContent = quote.author;
-//     }
+        authorText.textContent = quote.author;
+    }
 
-//     if (quote.text.length > 120) {
-//         quoteText.classList.add('long-quote');
-//     } else {
-//         quoteText.classList.remove('long-quote');
-//     }
-//     quoteText.textContent = quote.text;
-//     complete();
-// }
-
-
+    if (quote.text.length > 120) {
+        quoteText.classList.add('long-quote');
+    } else {
+        quoteText.classList.remove('long-quote');
+    }
+    quoteText.textContent = quote.text;
+    complete();
+}
 
 
-// // Get quotes from API
-// async function getQuotes() {
-//     loading();
-//     const apiUrl = 'https://type.fit/api/quotes';
-//     try {
-//         const response = await fetch(apiUrl);
-//         apiQuotes = await response.json();
-//         newQuote();
-//     } catch (error) {
 
-//     }
-// }
-// getQuotes();
+
+// Get quotes from API
+async function getQuotes() {
+    loading();
+    const apiUrl = 'https://type.fit/api/quotes';
+    try {
+        const response = await fetch(apiUrl);
+        apiQuotes = await response.json();
+        newQuote();
+    } catch (error) {
+
+    }
+}
+getQuotes();
 
 // Tweet quote
 function tweetQuote() {
@@ -75,9 +75,9 @@ twitterBtn.addEventListener('click', tweetQuote);
 
 // use below funtion
 // for local quotes only / -
-function newQuote() {
-    const quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
-    console.log(quote);
-}
+// function newQuote() {
+//     const quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
+//     console.log(quote);
+// }
 
-newQuote();
+// newQuote();

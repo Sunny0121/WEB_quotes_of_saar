@@ -20,43 +20,44 @@ function complete() {
     loader.hidden = true;
 }
 
-// Pick one quote
-function newQuote() {
-    loading();
-    const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
+// // Pick one quote
+// function newQuote() {
+//     loading();
+//     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
 
-    if (!quote.author) {
-        authorText.textContent = 'Unknown';
+//     if (!quote.author) {
+//         authorText.textContent = 'Unknown';
 
-    } else {
+//     } else {
 
-        authorText.textContent = quote.author;
-    }
+//         authorText.textContent = quote.author;
+//     }
 
-    if (quote.text.length > 120) {
-        quoteText.classList.add('long-quote');
-    } else {
-        quoteText.classList.remove('long-quote');
-    }
-    quoteText.textContent = quote.text;
-    complete();
-}
-
-
+//     if (quote.text.length > 120) {
+//         quoteText.classList.add('long-quote');
+//     } else {
+//         quoteText.classList.remove('long-quote');
+//     }
+//     quoteText.textContent = quote.text;
+//     complete();
+// }
 
 
-// Get quotes from API
-async function getQuotes() {
-    loading();
-    const apiUrl = 'https://type.fit/api/quotes';
-    try {
-        const response = await fetch(apiUrl);
-        apiQuotes = await response.json();
-        newQuote();
-    } catch (error) {
 
-    }
-}
+
+// // Get quotes from API
+// async function getQuotes() {
+//     loading();
+//     const apiUrl = 'https://type.fit/api/quotes';
+//     try {
+//         const response = await fetch(apiUrl);
+//         apiQuotes = await response.json();
+//         newQuote();
+//     } catch (error) {
+
+//     }
+// }
+// getQuotes();
 
 // Tweet quote
 function tweetQuote() {
@@ -70,7 +71,6 @@ newQuoteBtn.addEventListener('click', newQuote);
 twitterBtn.addEventListener('click', tweetQuote);
 
 
-getQuotes();
 
 
 // use below funtion for local quotes only/-

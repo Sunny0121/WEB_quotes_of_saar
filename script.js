@@ -73,10 +73,11 @@ twitterBtn.addEventListener('click', tweetQuote);
 
 
 
-// use below funtion for local quotes only/-
-// function newQuote() {
-//     const quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
-//     console.log(quote);
-// }
+// use below funtion
+// for local quotes only / -
+function newQuote() {
+    const quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
+    console.log(quote);
+}
 
-// newQuote();
+newQuote();
